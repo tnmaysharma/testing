@@ -1,0 +1,84 @@
+{
+  "ecdaee762c064c898eefe94c7c81bc42": [
+    {
+      "task": "condition",
+      "type": "and",
+      "values": [
+        "primary"
+      ],
+      "taskList": [
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/PrimaryApp/Database/PrimaryMongoDbConfig",
+          "targetPath": "/src/main/java/com/starterkit"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/PrimaryApp/Database/PrimaryMongo",
+          "targetPath": "/src/main/java/com/starterkit"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/PrimaryApp/Service/PrimaryMongo",
+          "targetPath": "/src/main/java/com/starterkit"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/BlankApp/Java/Resources/pom.xml",
+          "targetPath": "/pom.xml"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/PrimaryApp/Resources/application.properties",
+          "targetPath": "/src/main/resources/application.properties"
+        },
+        {
+          "task": "readMe",
+          "sourcePath": "/Apps/Custom/ReadMe/Database/MongoDB/MongoDB.md",
+          "targetPath": "/README.md",
+          "orderID": 203
+        }
+      ]
+    },
+    {
+      "task": "condition",
+      "type": "and",
+      "values": [
+        "secondary"
+      ],
+      "taskList": [
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/SecondaryApp/Database/SecondaryMongo",
+          "targetPath": "/src/main/java/com/starterkit"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/SecondaryApp/Database/SecondaryMongoDbConfig",
+          "targetPath": "/src/main/java/com/starterkit"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/SecondaryApp/Service/SecondaryMongo",
+          "targetPath": "/src/main/java/com/starterkit"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/BlankApp/Java/Resources/pom.xml",
+          "targetPath": "/pom.xml"
+        },
+        {
+          "task": "directoryCopy",
+          "sourcePath": "/Apps/supportedPatterns/Java/SecondaryApp/Resources/application.properties",
+          "targetPath": "/src/main/resources/application.properties"
+        },
+        {
+          "task": "readMe",
+          "sourcePath": "/Apps/Custom/ReadMe/Database/MongoDB/MongoDB.md",
+          "targetPath": "/README.md",
+          "orderID": 203
+        }
+      ]
+    }
+  ]
+}
