@@ -1,0 +1,8 @@
+---
+applications:
+- name: testpatterns
+  memory: 512M
+  instances: 1
+  path: ./target/Spring-Blueprint-0.1.war
+  services:
+    - mongo-bp
