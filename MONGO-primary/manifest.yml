@@ -1,0 +1,10 @@
+---
+applications:
+- name: taskjsontest
+  memory: 512M
+  instances: 1
+  services:
+    - <serviceInstance name(s) to be specified here>
+  env:
+    - <envVariablesKey>: <envVariablesValue>
+  
