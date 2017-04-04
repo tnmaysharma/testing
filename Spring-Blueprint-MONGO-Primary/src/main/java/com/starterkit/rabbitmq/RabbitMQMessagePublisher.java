@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-public class RabbitMQMessagePublisher implements IMessagePublisher {
+public class RabbitMQMessagePublisher {
 
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
@@ -23,7 +23,6 @@ public class RabbitMQMessagePublisher implements IMessagePublisher {
 	 * method to publish the json message in to rabbit MQ server and returns the unique id
 	 * @see com.cognizant.starterkit.mq.IMessagePublisher#publishMessage(java.lang.String)
 	 */
-	@Override
 	public void publishMessage(String messageContent,String requestGuid) {
 		MessageProperties messageProperties = new MessageProperties();
 		messageProperties.setCorrelationIdString(requestGuid);

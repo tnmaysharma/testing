@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.starterkit.domain.Album;
-import com.starterkit.rabbitmq.IMessagePublisher;
+import com.starterkit.rabbitmq.RabbitMQMessagePublisher;
 import com.starterkit.repositories.JpaAlbumRepository;
 
 /**
@@ -28,7 +28,7 @@ public class AlbumService {
 	private JpaAlbumRepository jpaAlbumRepository;
 	
 	@Autowired
-	IMessagePublisher iMessagePublisher;
+	RabbitMQMessagePublisher rabbitMQMessagePublisher;
 
 	/**
 	 * Get all the task from 'Album' Table by searching on artistName basis.
@@ -53,7 +53,7 @@ public class AlbumService {
 	public void removeAlbum(String id) {
 		Album album = getAlbumData(id);
 		String requestGuid = new SimpleDateFormat("dd-MM-yy").format(new Date());
-		iMessagePublisher.publishMessage(album.getEmailID(), requestGuid);
+		rabbitMQMessagePublisher.publishMessage(album.getEmailID(), requestGuid);
 		jpaAlbumRepository.delete(id);
 	}
 
@@ -67,7 +67,7 @@ public class AlbumService {
 	public void saveAlbum(String title, String artist, String releaseYear, String emailID) {
 		Album album = new Album(title, artist, releaseYear, emailID);
 		String requestGuid = new SimpleDateFormat("dd-MM-yy").format(new Date());
-		iMessagePublisher.publishMessage(album.getEmailID(),requestGuid);
+		rabbitMQMessagePublisher.publishMessage(album.getEmailID(),requestGuid);
 		jpaAlbumRepository.save(album);
 
 	}
@@ -85,7 +85,7 @@ public class AlbumService {
 		Album album = new Album(title, artist, releaseYear, emailID);
 		album.setId(id);
 		String requestGuid = new SimpleDateFormat("dd-MM-yy").format(new Date());
-		iMessagePublisher.publishMessage(album.getEmailID(),requestGuid);
+		rabbitMQMessagePublisher.publishMessage(album.getEmailID(),requestGuid);
 		jpaAlbumRepository.save(album);
 
 	}

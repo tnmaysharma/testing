@@ -70,7 +70,6 @@ public class ConnectionFactoryRabbitMQ {
 	 */
 	@Bean
 	public ConnectionFactory connectionFactory() {
-	;
 		String deployLocation = "cloud";
 		ConnectionFactory connectionFactory = null;
 		if (deployLocation.equalsIgnoreCase("cloud")) {
