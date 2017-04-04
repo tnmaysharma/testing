@@ -1,0 +1,11 @@
+---
+applications:
+- name: taskjsontest
+  memory: 512M
+  instances: 1
+  path: .\target\Spring-Blueprint-MONGO-Primary-0.1.war
+  services:
+    - mongo-bp
+    - ppRabbitMQ
+
+  

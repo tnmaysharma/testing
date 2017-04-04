@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Spring Boot MVC REST Mongo DB Demo
+Implementation-Version: 0.1
+Built-By: sandhya
+Implementation-Vendor-Id: techm.cisco.demo
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/Spring-Bluep
+ rint-MONGO-Primary/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
