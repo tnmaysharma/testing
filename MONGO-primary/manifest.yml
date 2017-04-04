@@ -3,8 +3,7 @@ applications:
 - name: taskjsontest
   memory: 512M
   instances: 1
+  path: ./target/Spring-Blueprint-MONGO-Primary-0.1.war
   services:
-    - <serviceInstance name(s) to be specified here>
-  env:
-    - <envVariablesKey>: <envVariablesValue>
-  
+    - mongo-bp
+    - ppRabbitMQ

@@ -26,7 +26,7 @@ public class RabbitMQMessagePublisher implements IMessagePublisher {
 	@Override
 	public void publishMessage(String messageContent,String requestGuid) {
 		MessageProperties messageProperties = new MessageProperties();
-		messageProperties.setCorrelationId(requestGuid.getBytes());
+		//messageProperties.setCorrelationId(requestGuid.getBytes());
 		messageProperties.setDeliveryMode(MessageDeliveryMode.PERSISTENT);
 		Message message = new Message(messageContent.getBytes(), messageProperties);
 		rabbitTemplate.send(message);

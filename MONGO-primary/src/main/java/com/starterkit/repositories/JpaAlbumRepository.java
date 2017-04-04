@@ -1,8 +1,8 @@
 package com.starterkit.repositories;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.starterkit.domain.Album;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * @author narendra.gurram@cognizant.com

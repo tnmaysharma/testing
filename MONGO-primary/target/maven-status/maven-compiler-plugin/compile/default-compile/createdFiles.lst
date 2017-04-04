@@ -1,0 +1,13 @@
+com\starterkit\controller\AlbumController.class
+com\cognizant\starterkit\rabbitmq\RabbitMQMessagePublisher.class
+com\starterkit\controller\ArtistController.class
+com\starterkit\CloudConfig.class
+com\starterkit\domain\Artist.class
+com\cognizant\starterkit\rabbitmq\ConnectionFactoryRabbitMQ.class
+com\starterkit\repositories\JpaAlbumRepository.class
+com\starterkit\Application.class
+com\starterkit\domain\Album.class
+com\starterkit\repositories\JpaArtistRepository.class
+com\starterkit\service\ArtistService.class
+com\cognizant\starterkit\rabbitmq\IMessagePublisher.class
+com\starterkit\service\AlbumService.class

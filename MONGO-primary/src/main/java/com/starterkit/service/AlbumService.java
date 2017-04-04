@@ -51,7 +51,9 @@ public class AlbumService {
 	 * @param id
 	 */
 	public void removeAlbum(String id) {
-		//iMessagePublisher.publishMessage("", requestGuid);
+		Album album = getAlbumData(id);
+		String requestGuid = new SimpleDateFormat("dd-MM-yy HH:mm:SS").format(new Date());
+		iMessagePublisher.publishMessage(album.getEmailID(), requestGuid);
 		jpaAlbumRepository.delete(id);
 	}
 
@@ -64,7 +66,7 @@ public class AlbumService {
 	 */
 	public void saveAlbum(String title, String artist, String releaseYear, String emailID) {
 		Album album = new Album(title, artist, releaseYear, emailID);
-		String requestGuid = new SimpleDateFormat("dd-MM-yy").format(new Date());
+		String requestGuid = new SimpleDateFormat("dd-MM-yy HH:mm:SS").format(new Date());
 		iMessagePublisher.publishMessage(album.getEmailID(),requestGuid);
 		jpaAlbumRepository.save(album);
 
@@ -82,14 +84,18 @@ public class AlbumService {
 	public void editAlbum(String id, String title, String artist, String releaseYear, String emailID) {
 		Album album = new Album(title, artist, releaseYear, emailID);
 		album.setId(id);
-		String requestGuid = new SimpleDateFormat("dd-MM-yy").format(new Date());
+		String requestGuid = new SimpleDateFormat("dd-MM-yy HH:mm:SS").format(new Date());
 		iMessagePublisher.publishMessage(album.getEmailID(),requestGuid);
 		jpaAlbumRepository.save(album);
 
 	}
 	
-	/*public Album getAlbumData(String id){
+	/**
+	 * @param id
+	 * @return
+	 */
+	public Album getAlbumData(String id){
 		return jpaAlbumRepository.findOne(id);
 		
-	}*/
+	}
 }
